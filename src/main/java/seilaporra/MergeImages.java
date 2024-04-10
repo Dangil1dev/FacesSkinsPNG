@@ -15,15 +15,15 @@ public class MergeImages extends JFrame implements ActionListener {
     private File initialDirectory = null;
 
     public MergeImages() {
-        setTitle("Selecione as Imagens");
+        setTitle("Choose the face");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 150);
+        setSize(256, 256);
         setLocationRelativeTo(null);
 
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
 
-        JButton chooseImageButton = new JButton("Escolher Imagem");
+        JButton chooseImageButton = new JButton("Choose face");
         chooseImageButton.addActionListener(this);
         panel.add(chooseImageButton, BorderLayout.CENTER);
 
@@ -50,11 +50,11 @@ public class MergeImages extends JFrame implements ActionListener {
                 if (imageCount == 7) {
                     mergeImages();
                 } else {
-                    JOptionPane.showMessageDialog(this, "Selecione a próxima imagem.");
+                    JOptionPane.showMessageDialog(this, "Select the Next Face.");
                 }
             } catch (IOException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(this, "Erro ao carregar a imagem.");
+                JOptionPane.showMessageDialog(this, "Error loading the face.");
             }
         }
     }
